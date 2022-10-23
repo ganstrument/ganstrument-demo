@@ -1,3 +1,12 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+---
+<script src="https://cdn.jsdelivr.net/npm/tone@14.7.39/build/Tone.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+
 This web site demonstrates the audio examples of the paper titled **GANStrument: Adversarial Instrument Sound Synthesis with Pitch-invariant Instance Conditioning**.
 
 **GANStrument** is a novel generative adversarial model for instrument sound synthesis.
@@ -10,6 +19,31 @@ In addition, we introduce an adversarial training scheme for pitch-invariant fea
 
 # Playing MIDIs
 J.S. Bach Prelude
+
+
+<audio-player title="FluteBrass"
+	              src="./media/music/flutebrass.mp3"
+	              bar-width="5"
+	              bar-gap="2"
+	              preload autoplay
+	               ></audio-player>
+
+<audio-player title="FluteKey"
+                 src="./media/music/flutekey.mp3"
+                 bar-width="5"
+                 bar-gap="2"
+                 preload autoplay></audio-player>
+<script src="./audio-player.js"></script>
+
+
+
+
+<!-- <button id="unmute">Tone Start</button>
+<script src="./ganstrument-player/player.js"></script> -->
+
+<!-- <canvas id="ganstrument" width="640" height="480"></canvas>
+<script src="./ganstrument-player/ganstrument.js"></script> -->
+
 
 Bass Loop
 
