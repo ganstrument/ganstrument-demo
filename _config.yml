@@ -1,4 +1,4 @@
-title: GANStrument
-description: Adversarial Instrument Sound Synthesis with Pitch-invariant Instance Conditioning
+title: "GANStrument: Adversarial Instrument Sound Synthesis with Pitch-invariant Instance Conditioning"
+description: Gaku Narita, Junichi Shimizu, and Taketo Akama (Sony Computer Science Laboratories, Tokyo, Japan)
 theme: jekyll-theme-cayman
 markdown: kramdown

@@ -5,13 +5,64 @@ Given a one-shot sound as input, it is able to generate pitched instrument sound
 By exploiting instance conditioning, GANStrument achieves better fidelity and diversity of synthesized sounds and generalization ability to various inputs.
 In addition, we introduce an adversarial training scheme for a pitch-invariant feature extractor that significantly improves the pitch accuracy and timbre consistency.
 
-* TOC
-{:toc}
+- [Playing MIDIs](#playing-midis)
+- [Conditioning Comparison](#conditioning-comparison)
+- [Feature Extractor Comparison](#feature-extractor-comparison)
+- [Additional Examples](#additional-examples)
+  - [Non-Instrument Sound Inputs](#non-instrument-sound-inputs)
+  - [Latent interpolation](#latent-interpolation)
+- [Bonus Track](#bonus-track)
+- [References](#references)
 
 # Playing MIDIs
-### J.S. Bach Prelude
+The following examples play the Prelude of Suite No. 1 in G major, BWV 1007, J.S. Bach, with GANStrument-generated sounds.
+Two one-shot sounds are used as inputs for each example, and synthesized timbre is gradually varied over time based on the interpolation in the latent space.
 
-### Bass Loop
+Synthesized results demonstrate that GANStrument is able to generate instrument sounds with accurate pitch that reflect input timbres, and smoothly interpolate multiple sounds.
+Note that, in contrast to end-to-end music synthesis, instrument sound synthesis with GANStrument enables independent control of MIDIs and timbre, which is compatible with typical production flows in the music industry.
+
+### Flute to Bass
+<table>
+  <tr>
+    <th>input 1</th>
+    <th>input 2</th>
+    <th>interpolation (input 1 to 2)</th>
+  </tr>
+  <tr>
+    <td><img src="./media/bach_prelude/01/query1_spec.png" width="100"><br><audio controls src="./media/bach_prelude/01/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/01/query2_spec.png" width="100"><br><audio controls src="./media/bach_prelude/01/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/01/FluteBrass.png"><audio controls src="./media/bach_prelude/01/FluteBrass.mp3" style="width:500px;height:30px;"></audio></td>
+  </tr>
+</table>
+
+### Flute to Key
+<table>
+  <tr>
+    <th>input 1</th>
+    <th>input 2</th>
+    <th>interpolation (input 1 to 2)</th>
+  </tr>
+  <tr>
+    <td><img src="./media/bach_prelude/02/query1_spec.png" width="100"><br><audio controls src="./media/bach_prelude/02/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/02/query2_spec.png" width="100"><br><audio controls src="./media/bach_prelude/02/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/02/FluteKey.png"><audio controls src="./media/bach_prelude/02/FluteKey.mp3" style="width:500px;height:30px;"></audio></td>
+  </tr>
+</table>
+
+### Organ to Guitar
+<table>
+  <tr>
+    <th>input 1</th>
+    <th>input 2</th>
+    <th>interpolation (input 1 to 2)</th>
+  </tr>
+  <tr>
+    <td><img src="./media/bach_prelude/03/query1_spec.png" width="100"><br><audio controls src="./media/bach_prelude/03/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/03/query2_spec.png" width="100"><br><audio controls src="./media/bach_prelude/03/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/03/OrganGuitar.png"><audio controls src="./media/bach_prelude/03/OrganGuitar.mp3" style="width:500px;height:30px;"></audio></td>
+  </tr>
+</table>
+
 
 # Conditioning Comparison
 To validate the proposed approach, we trained two class-conditional GANs as strong baselines: the first model was conditioned on pitch, and the other was conditioned on both pitch and instrument category (using 11 NSynth instrument categories).
@@ -704,6 +755,54 @@ These results demonstrate that GANStrument is able to smoothly interpolate multi
     <td><img src="./media/additional_examples/interpolation/08/query2_spec.png" width="100"><br><audio controls src="./media/additional_examples/interpolation/08/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
   </tr>
 </table>
+
+
+# Bonus Track
+We tried to generate a loop track ourselves by using GANStrument.
+The following example consists of 4 main tracks, that use GANStrument-generated sounds, and accompaniment of keyboard and drum.
+Note that an interpolation ratio of 4 main tracks varies from 0.1, 0.2, 0.5 to 0.9 and accompaniment does not use GANStrument-generated sounds.
+
+<table>
+  <tr>
+    <th>track</th>
+    <th>input 1</th>
+    <th>input 2</th>
+    <th>interpolation (input 1 to 2)</th>
+  </tr>
+  <tr>
+    <td>Track 1: bass<br>(bass to kick)</td>
+    <td><audio controls src="./media/original_track/01/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/01/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/01/BassKick.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+  <tr>
+    <td>Track 2: melody 1<br>(flute to brass)</td>
+    <td><audio controls src="./media/original_track/02/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/02/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/02/FluteBrass.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+  <tr>
+    <td>Track 3: melody 2<br>(organ to guitar)</td>
+    <td><audio controls src="./media/original_track/03/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/03/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/03/OrganGuitar.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+  <tr>
+    <td>Track 4: arpeggio<br>(string to marimba)</td>
+    <td><audio controls src="./media/original_track/04/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/04/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track/04/StringMarimba.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+  <tr>
+    <td>others<br>(<i>not generated</i>)</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td><audio controls src="./media/original_track/05/Others.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+</table>
+
+Mixing result
+<audio controls src="./media/original_track/ganstrument_music.wav"></audio>
 
 
 # References
