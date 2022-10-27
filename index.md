@@ -758,9 +758,9 @@ These results demonstrate that GANStrument is able to smoothly interpolate multi
 
 
 # Bonus Track
-We tried to generate a loop track ourselves by using GANStrument.
-The following example consists of 4 main tracks, that use GANStrument-generated sounds, and accompaniment of keyboard and drum.
-Note that an interpolation ratio of 4 main tracks varies from 0.1, 0.2, 0.5 to 0.9 and accompaniment does not use GANStrument-generated sounds.
+We tried generating a loop track by ourselves using GANStrument.
+The following example consists of 4 tracks for which we use GANStrument-generated sounds and the accompaniment track of keyboard and drum.
+Note that the interpolation ratio of the 4 main tracks varies over time (0.1, 0.2, 0.5 and 0.9) and the accompaniment track does not use GANStrument-generated sounds.
 
 <table>
   <tr>
@@ -794,7 +794,7 @@ Note that an interpolation ratio of 4 main tracks varies from 0.1, 0.2, 0.5 to 0
     <td><audio controls src="./media/original_track/04/StringMarimba.wav" style="width:300px;height:30px;"></audio></td>
   </tr>
   <tr>
-    <td>others<br>(<i>not generated</i>)</td>
+    <td>accompaniment<br>(<i>not generated</i>)</td>
     <td>N/A</td>
     <td>N/A</td>
     <td><audio controls src="./media/original_track/05/Others.wav" style="width:300px;height:30px;"></audio></td>
