@@ -69,7 +69,7 @@ To validate the proposed approach, we trained two class-conditional GANs as stro
 Note that we used the same architecture and training parameters for these models for fair comparison.
 
 The following examples show the interpolation in the latent space.
-For baseline models, we projected the input into the latent space by the hybrid GAN inversion that uses both an encoder and optimization as described in the original paper.
+For baseline models, we projected the input onto the latent space by the hybrid GAN inversion that uses both an encoder and optimization as described in the original paper.
 We trained both our model and baselines on the NSynth dataset [1]. The Good-sounds dataset [2] was not seen during training.
 Note that NSynth inputs were taken from validation or test sets.
 
