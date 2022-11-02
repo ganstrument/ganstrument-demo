@@ -63,6 +63,20 @@ Note that, in contrast to end-to-end music synthesis, instrument sound synthesis
   </tr>
 </table>
 
+### Mallet to Reed
+<table>
+  <tr>
+    <th>input 1</th>
+    <th>input 2</th>
+    <th>interpolation (input 1 to 2)</th>
+  </tr>
+  <tr>
+    <td><img src="./media/bach_prelude/04/query1_spec.png" width="100"><br><audio controls src="./media/bach_prelude/04/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/04/query2_spec.png" width="100"><br><audio controls src="./media/bach_prelude/04/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><img src="./media/bach_prelude/04/MalletReed.png"><audio controls src="./media/bach_prelude/04/MalletReed.wav" style="width:500px;height:30px;"></audio></td>
+  </tr>
+</table>
+
 
 # Conditioning Comparison
 To validate the proposed approach, we trained two class-conditional GANs as strong baselines: the first model was conditioned on pitch, and the other was conditioned on both pitch and instrument category (using 11 NSynth instrument categories).
