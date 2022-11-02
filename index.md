@@ -772,7 +772,49 @@ These results demonstrate that GANStrument is able to smoothly interpolate multi
 
 
 # Bonus Track
-We tried making a loop track by ourselves using GANStrument.
+We tried making loop tracks by ourselves using GANStrument.
+
+### Loop Track 1
+The following example consists of 3 tracks for which we use GANStrument-generated sounds and the accompaniment track of drum.
+Note that the interpolation ratio of the 3 main tracks varies over time (0.0, 0.1, 0.2, ..., 1.0) and we do not use GANStrument-generated sounds for the accompaniment track.
+
+<table>
+  <tr>
+    <th>track</th>
+    <th>input 1</th>
+    <th>input 2</th>
+    <th>interpolation (input 1 to 2)</th>
+  </tr>
+  <tr>
+    <td>Track 1: melody<br>(mallet to reed)</td>
+    <td><audio controls src="./media/original_track_02/01/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track_02/01/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track_02/01/MalletReed.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+  <tr>
+    <td>Track 2: arpeggio<br>(flute to keyboard)</td>
+    <td><audio controls src="./media/original_track_02/02/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track_02/02/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track_02/02/FluteKey.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+  <tr>
+    <td>Track 3: chord<br>(organ to guitar)</td>
+    <td><audio controls src="./media/original_track_02/03/query1_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track_02/03/query2_audio.wav" style="width:100px;height:30px;"></audio></td>
+    <td><audio controls src="./media/original_track_02/03/OrganGuitar.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+  <tr>
+    <td>accompaniment<br>(<i>not generated</i>)</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td><audio controls src="./media/original_track_02/04//Others.wav" style="width:300px;height:30px;"></audio></td>
+  </tr>
+</table>
+
+Mixing result
+<audio controls src="./media/original_track_02/ganstrument_music.wav"></audio>
+
+### Loop Track 2
 The following example consists of 4 tracks for which we use GANStrument-generated sounds and the accompaniment track of keyboard and drum.
 Note that the interpolation ratio of the 4 main tracks varies over time (0.1, 0.2, 0.5 and 0.9) and we do not use GANStrument-generated sounds for the accompaniment track.
 
