@@ -16,7 +16,7 @@ In addition, we introduce an adversarial training scheme for a pitch-invariant f
 
 # Playing MIDIs
 The following examples play the Prelude of Suite No. 1 in G major, BWV 1007, J.S. Bach, with GANStrument-generated sounds.
-Two one-shot sounds are used as inputs for each example, and synthesized timbre is gradually varied over time based on the interpolation in the latent space.
+Two one-shot sounds are used as inputs for each example, and synthesized timbre is gradually varied over time based on the interpolation in the latent space, where the interpolation ratio is incremented by 0.1 every bar.
 
 Synthesized results demonstrate that GANStrument is able to generate instrument sounds with accurate pitch that reflect input timbres, and smoothly interpolate multiple sounds.
 Note that, in contrast to end-to-end music synthesis, instrument sound synthesis with GANStrument enables independent control of MIDIs and timbre, which is compatible with typical production flows in the music industry.
@@ -816,7 +816,7 @@ Mixing result
 
 ### Loop Track 2
 The following example consists of 4 tracks for which we use GANStrument-generated sounds and the accompaniment track of keyboard and drum.
-Note that the interpolation ratio of the 4 main tracks varies over time (0.1, 0.2, 0.5 and 0.9) and we do not use GANStrument-generated sounds for the accompaniment track.
+Note that the interpolation ratio of the 4 main tracks varies over time (0.1, 0.2, 0.5, and 0.9) and we do not use GANStrument-generated sounds for the accompaniment track.
 
 <table>
   <tr>
