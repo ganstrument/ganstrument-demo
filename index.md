@@ -21,7 +21,7 @@ Two one-shot sounds are used as inputs for each example, and synthesized timbre 
 Synthesized results demonstrate that GANStrument is able to generate instrument sounds with accurate pitch that reflect input timbres, and smoothly interpolate multiple sounds.
 Note that, in contrast to end-to-end music synthesis, instrument sound synthesis with GANStrument enables independent control of MIDIs and timbre, which is compatible with typical production flows in the music industry.
 
-### Flute to Bass
+### Flute to Brass
 <table>
   <tr>
     <th>input 1</th>
@@ -35,7 +35,7 @@ Note that, in contrast to end-to-end music synthesis, instrument sound synthesis
   </tr>
 </table>
 
-### Flute to Key
+### Flute to Keyboard
 <table>
   <tr>
     <th>input 1</th>
